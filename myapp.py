@@ -1,7 +1,7 @@
-from flask import Flask
+from flask import Flask # 
 import requests, os
 
-app = Flask(__name__)
+app = Flask(__name__) 
 
 @app.route("/")
 def weather():

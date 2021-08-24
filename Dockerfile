@@ -1,12 +1,8 @@
 FROM python:3.9.6-alpine3.14
 
-RUN pip install flask requests
-
-RUN mkdir /app
-
-COPY myapp.py /app
-
 WORKDIR /app
+COPY . /app
+RUN pip install -r requirements.txt
 
 ENV FLASK_APP=myapp
 
