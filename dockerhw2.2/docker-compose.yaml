@@ -1,0 +1,35 @@
+ 
+version: '3.8'
+
+services:
+
+  app:
+    container_name: app
+    build: ./app
+    #command:
+    environment:
+      MYAPP_CITY: ${CITY}
+      MYAPP_API_KEY: ${API_KEY}
+      MYAPP_NAME: ${NAME}
+    ports:
+      - 5000:5000
+    depends_on:
+      - db    
+    networks:
+      - dbnet
+    
+  db:
+    container_name: db
+    image: postgres
+    # restart: always
+    volumes:
+      - ./databases/postgres/data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=postres
+    ports:
+      - 5432:5432
+    networks:
+      - dbnet
+networks:
+  dbnet:
+    driver: bridge
