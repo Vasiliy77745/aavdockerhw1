@@ -8,9 +8,9 @@ services:
     build: ./app
     #command:
     environment:
-      MYAPP_CITY=sankt-peterburg
-      MYAPP_API_KEY=8b29d3e20fad9b761759e0a62abf053b
-      MYAPP_NAME=Alex
+      MYAPP_CITY: sankt-peterburg
+      MYAPP_API_KEY: 8b29d3e20fad9b761759e0a62abf053b
+      MYAPP_NAME: Alex
     ports:
       - 5000:5000
     depends_on:
