@@ -1,0 +1,34 @@
+ 
+version: '3.8'
+
+services:
+
+  app:
+    container_name: app
+    image: alexv77745/hw2:v2
+    environment:
+      MYAPP_CITY: sankt-peterburg
+      MYAPP_API_KEY: ${API_KEY}
+      MYAPP_NAME: Alex
+      DB_HOST: db
+      DB_NAME: alexdb
+      DB_USER: alex
+      DB_PASS: postgres
+      DB_PORT: '5432'
+    ports:
+      - 5000:5000
+    depends_on:
+      - db    
+      
+  db:
+    container_name: db
+    image: postgres
+    volumes:
+      - ./db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=alex
+      - POSTGRES_DB=alexdb
+    ports:
+      - 5432:5432
+    

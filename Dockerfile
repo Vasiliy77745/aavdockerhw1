@@ -7,7 +7,6 @@ RUN pip install -r requirements.txt
 
 ENV MYAPP_CITY=Paris
 ENV MYAPP_NAME=Guest
-ENV MYAPP_API_KEY=0fcf0399deedeb84df6baecfb8c448f5
 ENV FLASK_APP=myapphw2
 
 CMD ["flask", "run", "--host", "0.0.0.0"]

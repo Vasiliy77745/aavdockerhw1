@@ -16,7 +16,7 @@ def weather():
 
     #Establishing the connection
     conn = psycopg2.connect(
-    database="alexdb", user='alex', password='postgres', host='127.0.0.1', port= '5432'
+    database=os.environ['DB_NAME'], user=os.environ['DB_USER'], password=os.environ['DB_PASS'], host=os.environ['DB_HOST'], port=os.environ['DB_PORT']
     )
     #Setting auto commit false
     conn.autocommit = True
