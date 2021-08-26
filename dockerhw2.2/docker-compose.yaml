@@ -7,10 +7,10 @@ services:
     container_name: app
     build: ./app
     #command:
-    environment:
-      MYAPP_CITY: sankt-peterburg
-      MYAPP_API_KEY: 8b29d3e20fad9b761759e0a62abf053b
-      MYAPP_NAME: Alex
+    #environment:
+     # MYAPP_CITY: sankt-peterburg
+      #MYAPP_API_KEY: 8b29d3e20fad9b761759e0a62abf053b
+      #MYAPP_NAME: Alex
     ports:
       - 5000:5000
     depends_on:
@@ -26,8 +26,8 @@ services:
       - ./databases/postgres/data:/var/lib/postgresql/data
     environment:
       - POSTGRES_PASSWORD=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_DB=postgres
+      - POSTGRES_USER=alex
+      - POSTGRES_DB=alexdb
     ports:
       - 5432:5432
     networks:

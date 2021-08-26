@@ -16,7 +16,7 @@ def weather():
 
     #Establishing the connection
     conn = psycopg2.connect(
-    database="postgres", user='postgres', password='postgres', host='127.0.0.1', port= '5432'
+    database="alexdb", user='alex', password='postgres', host='127.0.0.1', port= '5432'
     )
     #Setting auto commit false
     conn.autocommit = True
@@ -43,5 +43,5 @@ def weather():
     # Close communication with the database # Closing the connection
     cursor.close()
     conn.close()
-    return f"Hi {name}, {temp}°C {desc}."
+    return f"Hi {name}, today in {os.environ['MYAPP_CITY']} is {temp}°C {desc}."
 
