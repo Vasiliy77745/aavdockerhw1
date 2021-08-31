@@ -5,7 +5,8 @@ services:
 
   app:
     container_name: app
-    image: alexv77745/hw2:v2
+    #image: alexv77745/hw2:v2
+    image: alexv77745/hw2:${TAG}
     environment:
       MYAPP_CITY: sankt-peterburg
       MYAPP_API_KEY: ${API_KEY}
