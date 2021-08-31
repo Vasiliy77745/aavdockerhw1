@@ -1,4 +1,4 @@
-!#usr/bin/bash
+#!/bin/bash
 
 mkdir ~/dockertest1 && cd ~/dockertest1
 
