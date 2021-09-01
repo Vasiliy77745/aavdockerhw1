@@ -1,4 +1,8 @@
 # Myapp
+
+[![Build Status](https://app.travis-ci.com/Vasiliy77745/aavdockerhw1.svg?branch=main)](https://app.travis-ci.com/Vasiliy77745/aavdockerhw1)
+
+
 Listen 5000 TCP port
 
 ### Required app variables
